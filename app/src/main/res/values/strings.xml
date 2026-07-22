@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pathoria</string>
+    <string name="journey_forest_crossing_title">Лесная переправа</string>
+    <string name="journey_forest_crossing_subtitle">Глава 1 · Лесная дорога</string>
+    <string name="journey_next_point">До следующей точки</string>
+    <string name="journey_current_distance">2,1 км</string>
+    <string name="journey_steps_left">Шагов осталось: %1$d</string>
+</resources>

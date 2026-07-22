@@ -1,0 +1,30 @@
+package com.alexkravtsov.pathoria.core.designsystem.theme
+
+import androidx.compose.ui.graphics.Color
+
+internal val PathoriaDeepIndigo = Color(0xFF252745)
+internal val PathoriaTwilightBlue = Color(0xFF414A6B)
+internal val PathoriaForestGreen = Color(0xFF66785D)
+internal val PathoriaDustyBlue = Color(0xFF8296A6)
+internal val PathoriaParchment = Color(0xFFE6D4B5)
+internal val PathoriaMutedGold = Color(0xFFC99B52)
+internal val PathoriaWarmCream = Color(0xFFF3E8D2)
+internal val PathoriaDarkGold = Color(0xFF75551F)
+
+internal val PathoriaLightSurface = Color(0xFFFAF6EE)
+internal val PathoriaDarkSurface = Color(0xFF171827)
+internal val PathoriaLightPrimaryContainer = Color(0xFFE3E1F2)
+internal val PathoriaLightSecondaryContainer = Color(0xFFDFE7D9)
+internal val PathoriaLightTertiaryContainer = Color(0xFFF2DFC0)
+internal val PathoriaOnTertiaryContainer = Color(0xFF3D2C0D)
+internal val PathoriaDarkPrimary = Color(0xFFC7C9F2)
+internal val PathoriaDarkSecondary = Color(0xFFB7C8AE)
+internal val PathoriaDarkTertiary = Color(0xFFE1BA7B)
+internal val PathoriaDeepOnPrimaryContainer = Color(0xFF1B1D33)
+internal val PathoriaGreenOnSecondaryContainer = Color(0xFF263024)
+internal val PathoriaDarkSecondaryContainer = Color(0xFF3D4A39)
+internal val PathoriaDarkOnSecondaryContainer = Color(0xFFE1EBDC)
+internal val PathoriaDarkOnSurfaceVariant = Color(0xFFC4CBD3)
+internal val PathoriaDarkTertiaryContainer = Color(0xFF5A431E)
+internal val PathoriaDarkOnTertiary = Color(0xFF3A2911)
+internal val PathoriaDarkOnTertiaryContainer = Color(0xFF3A2911)
