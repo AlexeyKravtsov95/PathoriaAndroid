@@ -27,7 +27,7 @@ fun JourneyScreenCompactPreview() {
 @Preview(
     showBackground = true,
     widthDp = 412,
-    heightDp = 915, device = "spec:width=412px,height=915px,dpi=440"
+    heightDp = 915
 )
 @Composable
 fun JourneyScreenTallPreview() {
