@@ -27,7 +27,11 @@ import com.alexkravtsov.pathoria.feature.journey.component.JourneyLocationHeader
 fun JourneyScreen(modifier: Modifier = Modifier) {
     val remainingSteps = 2720
     val surfaceColor = MaterialTheme.colorScheme.surface
-    Box {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(surfaceColor)
+    ) {
         Image(
             painter = painterResource(
                 id = R.drawable.journey_forest_crossing
@@ -52,34 +56,35 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                     )
                 )
         )
-    }
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .windowInsetsPadding(WindowInsets.safeDrawing)
-            .padding(PathoriaSpacing.large),
-        verticalArrangement = Arrangement.SpaceBetween
-    ) {
-        JourneyLocationHeader(
-            title = stringResource(R.string.journey_forest_crossing_title),
-            subtitle = stringResource(R.string.journey_forest_crossing_subtitle)
-        )
-        Column(verticalArrangement = Arrangement.spacedBy(PathoriaSpacing.small)) {
-            Text(
-                text = stringResource(R.string.journey_next_point),
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .windowInsetsPadding(WindowInsets.safeDrawing)
+                .padding(PathoriaSpacing.large),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            JourneyLocationHeader(
+                title = stringResource(R.string.journey_forest_crossing_title),
+                subtitle = stringResource(R.string.journey_forest_crossing_subtitle)
             )
-            Text(
-                text = stringResource(R.string.journey_current_distance),
-                style = MaterialTheme.typography.displaySmall,
-                color = MaterialTheme.colorScheme.tertiary
-            )
-            Text(
-                text = stringResource(R.string.journey_steps_left, remainingSteps),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurface
-            )
+            Column(verticalArrangement = Arrangement.spacedBy(PathoriaSpacing.small)) {
+                Text(
+                    text = stringResource(R.string.journey_next_point),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = stringResource(R.string.journey_current_distance),
+                    style = MaterialTheme.typography.displaySmall,
+                    color = MaterialTheme.colorScheme.tertiary
+                )
+                Text(
+                    text = stringResource(R.string.journey_steps_left, remainingSteps),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
         }
     }
 }
