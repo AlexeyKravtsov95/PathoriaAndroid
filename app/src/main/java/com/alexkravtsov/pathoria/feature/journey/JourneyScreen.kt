@@ -14,6 +14,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -24,10 +26,11 @@ import com.alexkravtsov.pathoria.feature.journey.component.JourneyLocationHeader
 @Composable
 fun JourneyScreen(modifier: Modifier = Modifier) {
     val remainingSteps = 2720
+    val surfaceColor = MaterialTheme.colorScheme.surface
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.surface)
+            .background(surfaceColor)
     ) {
         Image(
             painter = painterResource(
@@ -36,6 +39,22 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
+        )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    brush = Brush.verticalGradient(
+                        colorStops = arrayOf(
+                            0.00f to surfaceColor.copy(alpha = 0.1f),
+                            0.20f to surfaceColor.copy(alpha = 0.2f),
+                            0.40f to Color.Transparent,
+                            0.62f to Color.Transparent,
+                            0.82f to surfaceColor.copy(alpha = 0.2f),
+                            1.00f to surfaceColor.copy(alpha = 0.3f)
+                        )
+                    )
+                )
         )
 
         Column(
