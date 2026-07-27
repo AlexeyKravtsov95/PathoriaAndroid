@@ -41,7 +41,7 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
             contentScale = ContentScale.Crop
         )
         Box(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxSize()
                 .background(
                     brush = Brush.verticalGradient(
