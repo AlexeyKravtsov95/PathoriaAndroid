@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaTheme
+import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
 fun JourneyLocationHeader(
@@ -23,12 +24,12 @@ fun JourneyLocationHeader(
         Text(
             text = title,
             style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.onSurface
+            color = JourneyArtworkColors.primaryText
         )
         Text(
             text = subtitle,
             style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            color = JourneyArtworkColors.secondaryText
         )
     }
 }

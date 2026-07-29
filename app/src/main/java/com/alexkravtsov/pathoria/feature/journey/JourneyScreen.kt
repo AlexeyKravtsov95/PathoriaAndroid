@@ -22,15 +22,16 @@ import androidx.compose.ui.res.stringResource
 import com.alexkravtsov.pathoria.R
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
 import com.alexkravtsov.pathoria.feature.journey.component.JourneyLocationHeader
+import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
 fun JourneyScreen(modifier: Modifier = Modifier) {
     val remainingSteps = 2720
-    val surfaceColor = MaterialTheme.colorScheme.surface
+    val scrimColor = JourneyArtworkColors.scrim
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(surfaceColor)
+            .background(scrimColor)
     ) {
         Image(
             painter = painterResource(
@@ -46,12 +47,12 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 .background(
                     brush = Brush.verticalGradient(
                         colorStops = arrayOf(
-                            0.00f to surfaceColor.copy(alpha = 0.1f),
-                            0.20f to surfaceColor.copy(alpha = 0.2f),
+                            0.00f to scrimColor.copy(alpha = 0.65f),
+                            0.20f to scrimColor.copy(alpha = 0.55f),
                             0.40f to Color.Transparent,
                             0.62f to Color.Transparent,
-                            0.82f to surfaceColor.copy(alpha = 0.2f),
-                            1.00f to surfaceColor.copy(alpha = 0.3f)
+                            0.82f to scrimColor.copy(alpha = 0.25f),
+                            1.00f to scrimColor.copy(alpha = 0.55f)
                         )
                     )
                 )
@@ -72,17 +73,17 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 Text(
                     text = stringResource(R.string.journey_next_point),
                     style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = JourneyArtworkColors.secondaryText
                 )
                 Text(
                     text = stringResource(R.string.journey_current_distance),
                     style = MaterialTheme.typography.displaySmall,
-                    color = MaterialTheme.colorScheme.tertiary
+                    color = JourneyArtworkColors.accent
                 )
                 Text(
                     text = stringResource(R.string.journey_steps_left, remainingSteps),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = JourneyArtworkColors.primaryText
                 )
             }
         }
