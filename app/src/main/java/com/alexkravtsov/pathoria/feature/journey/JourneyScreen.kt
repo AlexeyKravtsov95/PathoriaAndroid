@@ -28,6 +28,8 @@ import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 fun JourneyScreen(modifier: Modifier = Modifier) {
     val remainingSteps = 2720
     val scrimColor = JourneyArtworkColors.scrim
+    val journeyProgress = 0.61f
+
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -73,7 +75,8 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 label = stringResource(R.string.journey_next_point),
                 distance = stringResource(R.string.journey_current_distance),
                 remainingSteps = stringResource(R.string.journey_steps_left, remainingSteps),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                progress = journeyProgress
             )
         }
     }
