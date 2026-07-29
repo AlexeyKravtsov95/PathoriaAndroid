@@ -10,8 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -22,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import com.alexkravtsov.pathoria.R
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
 import com.alexkravtsov.pathoria.feature.journey.component.JourneyLocationHeader
+import com.alexkravtsov.pathoria.feature.journey.component.JourneyProgressCard
 import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
@@ -69,23 +68,11 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 title = stringResource(R.string.journey_forest_crossing_title),
                 subtitle = stringResource(R.string.journey_forest_crossing_subtitle)
             )
-            Column(verticalArrangement = Arrangement.spacedBy(PathoriaSpacing.small)) {
-                Text(
-                    text = stringResource(R.string.journey_next_point),
-                    style = MaterialTheme.typography.labelMedium,
-                    color = JourneyArtworkColors.secondaryText
-                )
-                Text(
-                    text = stringResource(R.string.journey_current_distance),
-                    style = MaterialTheme.typography.displaySmall,
-                    color = JourneyArtworkColors.accent
-                )
-                Text(
-                    text = stringResource(R.string.journey_steps_left, remainingSteps),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = JourneyArtworkColors.primaryText
-                )
-            }
+            JourneyProgressCard(
+                label = stringResource(R.string.journey_next_point),
+                distance = stringResource(R.string.journey_current_distance),
+                remainingSteps = stringResource(R.string.journey_steps_left, remainingSteps)
+            )
         }
     }
 }
