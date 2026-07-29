@@ -22,11 +22,12 @@ import androidx.compose.ui.res.stringResource
 import com.alexkravtsov.pathoria.R
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
 import com.alexkravtsov.pathoria.feature.journey.component.JourneyLocationHeader
+import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
 fun JourneyScreen(modifier: Modifier = Modifier) {
     val remainingSteps = 2720
-    val surfaceColor = MaterialTheme.colorScheme.surface
+    val surfaceColor = JourneyArtworkColors.scrim
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -72,17 +73,17 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 Text(
                     text = stringResource(R.string.journey_next_point),
                     style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = JourneyArtworkColors.secondaryText
                 )
                 Text(
                     text = stringResource(R.string.journey_current_distance),
                     style = MaterialTheme.typography.displaySmall,
-                    color = MaterialTheme.colorScheme.tertiary
+                    color = JourneyArtworkColors.accent
                 )
                 Text(
                     text = stringResource(R.string.journey_steps_left, remainingSteps),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = JourneyArtworkColors.primaryText
                 )
             }
         }
