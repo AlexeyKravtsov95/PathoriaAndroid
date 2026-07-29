@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
@@ -71,7 +72,8 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
             JourneyProgressCard(
                 label = stringResource(R.string.journey_next_point),
                 distance = stringResource(R.string.journey_current_distance),
-                remainingSteps = stringResource(R.string.journey_steps_left, remainingSteps)
+                remainingSteps = stringResource(R.string.journey_steps_left, remainingSteps),
+                modifier = Modifier.fillMaxWidth()
             )
         }
     }
