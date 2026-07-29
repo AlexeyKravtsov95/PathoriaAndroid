@@ -43,7 +43,7 @@ fun PathoriaProgressIndicator(
     heightDp = 640,
 )
 @Composable
-fun PathoriaProgressIndicatorPreview() {
+private fun PathoriaProgressIndicatorPreview() {
     PathoriaTheme {
         Column(
             modifier = Modifier
@@ -69,8 +69,5 @@ fun PathoriaProgressIndicatorPreview() {
                     .fillMaxWidth()
             )
         }
-        PathoriaProgressIndicator(
-            progress = 0f,
-        )
     }
 }

@@ -84,7 +84,7 @@ private fun JourneyProgressCardPreview() {
             distance = "2,1 км",
             remainingSteps = "Шагов осталось: 2720",
             modifier = Modifier.fillMaxWidth(),
-            progress = 0.9f
+            progress = 0.61f
         )
     }
 }
