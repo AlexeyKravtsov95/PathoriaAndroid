@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.alexkravtsov.pathoria.core.designsystem.component.PathoriaProgressIndicator
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaTheme
 import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
@@ -22,6 +23,7 @@ fun JourneyProgressCard(
     label: String,
     distance: String,
     remainingSteps: String,
+    progress: Float,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -54,6 +56,12 @@ fun JourneyProgressCard(
                 style = MaterialTheme.typography.displaySmall,
                 color = JourneyArtworkColors.accent
             )
+            PathoriaProgressIndicator(
+                progress = progress,
+                modifier = Modifier.fillMaxWidth(),
+                color = JourneyArtworkColors.accent,
+                trackColor = JourneyArtworkColors.progressTrack
+            )
             Text(
                 text = remainingSteps,
                 style = MaterialTheme.typography.bodyMedium,
@@ -73,9 +81,10 @@ private fun JourneyProgressCardPreview() {
     PathoriaTheme {
         JourneyProgressCard(
             label = "До следующей точки",
-            distance = "2,1км",
+            distance = "2,1 км",
             remainingSteps = "Шагов осталось: 2720",
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            progress = 0.61f
         )
     }
 }
@@ -91,9 +100,10 @@ private fun JourneyProgressCardLargeFontPreview() {
     PathoriaTheme {
         JourneyProgressCard(
             label = "До следующей точки",
-            distance = "2,1км",
+            distance = "2,1 км",
             remainingSteps = "Шагов осталось: 2720",
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            progress = 0.61f
         )
     }
 }
