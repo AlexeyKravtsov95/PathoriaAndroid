@@ -27,11 +27,11 @@ import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 @Composable
 fun JourneyScreen(modifier: Modifier = Modifier) {
     val remainingSteps = 2720
-    val surfaceColor = JourneyArtworkColors.scrim
+    val scrimColor = JourneyArtworkColors.scrim
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(surfaceColor)
+            .background(scrimColor)
     ) {
         Image(
             painter = painterResource(
@@ -47,12 +47,12 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 .background(
                     brush = Brush.verticalGradient(
                         colorStops = arrayOf(
-                            0.00f to surfaceColor.copy(alpha = 0.1f),
-                            0.20f to surfaceColor.copy(alpha = 0.2f),
+                            0.00f to scrimColor.copy(alpha = 0.65f),
+                            0.20f to scrimColor.copy(alpha = 0.55f),
                             0.40f to Color.Transparent,
                             0.62f to Color.Transparent,
-                            0.82f to surfaceColor.copy(alpha = 0.2f),
-                            1.00f to surfaceColor.copy(alpha = 0.3f)
+                            0.82f to scrimColor.copy(alpha = 0.25f),
+                            1.00f to scrimColor.copy(alpha = 0.55f)
                         )
                     )
                 )
