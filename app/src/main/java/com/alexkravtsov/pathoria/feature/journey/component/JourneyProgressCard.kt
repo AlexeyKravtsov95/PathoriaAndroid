@@ -51,16 +51,16 @@ fun JourneyProgressCard(
                 style = MaterialTheme.typography.labelMedium,
                 color = JourneyArtworkColors.secondaryText
             )
+            Text(
+                text = distance,
+                style = MaterialTheme.typography.displaySmall,
+                color = JourneyArtworkColors.accent
+            )
             PathoriaProgressIndicator(
                 progress = progress,
                 modifier = Modifier.fillMaxWidth(),
                 color = JourneyArtworkColors.accent,
                 trackColor = JourneyArtworkColors.progressTrack
-            )
-            Text(
-                text = distance,
-                style = MaterialTheme.typography.displaySmall,
-                color = JourneyArtworkColors.accent
             )
             Text(
                 text = remainingSteps,
@@ -81,7 +81,7 @@ private fun JourneyProgressCardPreview() {
     PathoriaTheme {
         JourneyProgressCard(
             label = "До следующей точки",
-            distance = "2,1км",
+            distance = "2,1 км",
             remainingSteps = "Шагов осталось: 2720",
             modifier = Modifier.fillMaxWidth(),
             progress = 0.9f
@@ -103,7 +103,7 @@ private fun JourneyProgressCardLargeFontPreview() {
             distance = "2,1 км",
             remainingSteps = "Шагов осталось: 2720",
             modifier = Modifier.fillMaxWidth(),
-            progress = 0f
+            progress = 0.61f
         )
     }
 }
