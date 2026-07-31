@@ -21,6 +21,9 @@ android {
     }
 
     buildTypes {
+        getByName("debug") {
+            isPseudoLocalesEnabled = true
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(

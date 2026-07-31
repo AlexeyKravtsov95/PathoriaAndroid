@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="journey_forest_crossing_title">
+        The Ancient Forest River Crossing
+    </string>
+    <string name="journey_forest_crossing_subtitle">
+        Chapter 1 · The Long Road Through the Whispering Woods
+    </string>
+
+    <string name="journey_collectible_label">
+        Your nearest collectible discovery
+    </string>
+    <string name="journey_collectible_moon_flower_title">
+        Moonlit Flower of the Forgotten Bridge
+    </string>
+    <string name="journey_collectible_distance">
+        Unlocked after another 850 steps
+    </string>
+    <string name="journey_collectible_description">
+        A mysterious flower glowing beside the ancient wooden bridge
+    </string>
+
+    <string name="journey_today">
+        Steps completed today
+    </string>
+    <string name="journey_current_today_steps">
+        6,430 steps completed
+    </string>
+    <string name="journey_streak">
+        Current walking streak
+    </string>
+    <string name="journey_current_streak">
+        4 consecutive days
+    </string>
+
+    <string name="journey_next_point">
+        Distance remaining to the next journey waypoint
+    </string>
+    <string name="journey_current_distance">
+        2.1 kilometres
+    </string>
+    <string name="journey_steps_left">
+        Steps remaining before arrival: %1$d
+    </string>
+
+    <string name="navigation_journey">
+        Adventure
+    </string>
+    <string name="navigation_journal">
+        Travel Journal
+    </string>
+    <string name="navigation_profile">
+        Explorer Profile
+    </string>
+</resources>
