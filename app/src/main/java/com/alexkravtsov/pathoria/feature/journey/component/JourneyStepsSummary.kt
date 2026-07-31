@@ -2,8 +2,11 @@ package com.alexkravtsov.pathoria.feature.journey.component
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -13,6 +16,7 @@ import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
 import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
@@ -42,18 +46,25 @@ fun JourneyStepsSummary(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .height(IntrinsicSize.Min)
                 .padding(PathoriaSpacing.medium),
             verticalAlignment = Alignment.CenterVertically
         ) {
             JourneyStatItem(
                 label = todayLabel,
                 value = todaySteps,
+                valueColor = JourneyArtworkColors.primaryText,
                 modifier = Modifier.weight(1f)
             )
-            VerticalDivider()
+            VerticalDivider(
+                modifier = Modifier.fillMaxHeight(),
+                thickness = 1.dp,
+                color = JourneyArtworkColors.panelBorder
+            )
             JourneyStatItem(
                 label = streakLabel,
                 value = streakValue,
+                valueColor = JourneyArtworkColors.accent,
                 modifier = Modifier.weight(1f)
             )
         }
@@ -64,6 +75,7 @@ fun JourneyStepsSummary(
 private fun JourneyStatItem(
     label: String,
     value: String,
+    valueColor: Color,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -77,7 +89,7 @@ private fun JourneyStatItem(
         Text(
             text = value,
             style = MaterialTheme.typography.bodyLarge,
-            color = JourneyArtworkColors.accent
+            color = valueColor
         )
     }
 }

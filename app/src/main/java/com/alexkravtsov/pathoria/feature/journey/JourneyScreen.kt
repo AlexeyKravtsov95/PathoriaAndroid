@@ -80,7 +80,8 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                     todayLabel = stringResource(R.string.journey_today),
                     todaySteps = stringResource(R.string.journey_current_today_steps),
                     streakLabel = stringResource(R.string.journey_streak),
-                    streakValue = stringResource(R.string.journey_current_streak)
+                    streakValue = stringResource(R.string.journey_current_streak),
+                    modifier = Modifier.fillMaxWidth()
                 )
                 JourneyProgressCard(
                     label = stringResource(R.string.journey_next_point),
