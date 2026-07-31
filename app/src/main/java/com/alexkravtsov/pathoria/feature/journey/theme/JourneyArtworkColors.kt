@@ -13,4 +13,5 @@ internal object JourneyArtworkColors {
     val panelContainer = scrim.copy(alpha = 0.8f)
     val panelBorder = secondaryText.copy(alpha = 0.2f)
     val progressTrack = secondaryText.copy(alpha = 0.3f)
+    val collectibleMarkerContainer = accent.copy(alpha = 0.15f)
 }
