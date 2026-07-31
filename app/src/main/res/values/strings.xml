@@ -5,4 +5,8 @@
     <string name="journey_next_point">До следующей точки</string>
     <string name="journey_current_distance">2,1 км</string>
     <string name="journey_steps_left">Шагов осталось: %1$d</string>
+    <string name="journey_today">Сегодня</string>
+    <string name="journey_current_today_steps">6 430 шагов</string>
+    <string name="journey_streak">Серия</string>
+    <string name="journey_current_streak">4 дня</string>
 </resources>

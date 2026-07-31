@@ -29,12 +29,12 @@ fun JourneyProgressCard(
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = JourneyArtworkColors.progressCardContainer
+            containerColor = JourneyArtworkColors.panelContainer
         ),
         shape = MaterialTheme.shapes.large,
         border = BorderStroke(
             width = 1.dp,
-            color = JourneyArtworkColors.progressCardBorder
+            color = JourneyArtworkColors.panelBorder
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 0.dp

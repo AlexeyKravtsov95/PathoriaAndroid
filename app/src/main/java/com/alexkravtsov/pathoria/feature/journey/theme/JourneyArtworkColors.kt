@@ -10,7 +10,7 @@ internal object JourneyArtworkColors {
     val secondaryText = PathoriaParchment
     val accent = PathoriaDarkTertiary
     val scrim = PathoriaDeepIndigo
-    val progressCardContainer = scrim.copy(alpha = 0.8f)
-    val progressCardBorder = secondaryText.copy(alpha = 0.2f)
+    val panelContainer = scrim.copy(alpha = 0.8f)
+    val panelBorder = secondaryText.copy(alpha = 0.2f)
     val progressTrack = secondaryText.copy(alpha = 0.3f)
 }
