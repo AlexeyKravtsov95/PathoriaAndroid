@@ -78,10 +78,11 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 verticalArrangement = Arrangement.spacedBy(PathoriaSpacing.small)
             ) {
                 JourneyCollectiblePreview(
-                    label = stringResource(R.string.journey_near),
-                    title = stringResource(R.string.journey_moon_flower),
-                    distance = stringResource(R.string.journey_after_steps),
-                    description = stringResource(R.string.journey_fair_near_old_bridge)
+                    label = stringResource(R.string.journey_collectible_label),
+                    title = stringResource(R.string.journey_collectible_moon_flower_title),
+                    distance = stringResource(R.string.journey_collectible_distance),
+                    description = stringResource(R.string.journey_collectible_description),
+                    modifier = Modifier.fillMaxWidth()
                 )
                 JourneyStepsSummary(
                     todayLabel = stringResource(R.string.journey_today),

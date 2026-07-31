@@ -113,34 +113,36 @@ fun JourneyCollectiblePreview(
 }
 
 @Preview(
+    showBackground = true,
     widthDp = 360,
-    heightDp = 640
 )
 @Composable
-fun JourneyCollectiblePreviewPreview() {
+private fun JourneyCollectiblePreviewPreview() {
     PathoriaTheme {
         JourneyCollectiblePreview(
             label = "Ближайшая находка",
             title = "Лунный цветок",
             distance = "Через 850 шагов",
-            description = "Светится у старого моста"
+            description = "Светится у старого моста",
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
 
 @Preview(
+    showBackground = true,
     widthDp = 360,
-    heightDp = 640,
     fontScale = 2.0f
 )
 @Composable
-fun JourneyCollectiblePreviewLargeFontPreview() {
+private fun JourneyCollectiblePreviewLargeFontPreview() {
     PathoriaTheme {
         JourneyCollectiblePreview(
             label = "Ближайшая находка",
             title = "Лунный цветок",
             distance = "Через 850 шагов",
-            description = "Светится у старого моста"
+            description = "Светится у старого моста",
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }

@@ -9,8 +9,8 @@
     <string name="journey_current_today_steps">6 430 шагов</string>
     <string name="journey_streak">Серия</string>
     <string name="journey_current_streak">4 дня</string>
-    <string name="journey_near">Ближайшая находка</string>
-    <string name="journey_moon_flower">Лунный цветок</string>
-    <string name="journey_after_steps">Через 850 шагов</string>
-    <string name="journey_fair_near_old_bridge">Светится у старого моста</string>
+    <string name="journey_collectible_label">Ближайшая находка</string>
+    <string name="journey_collectible_moon_flower_title">Лунный цветок</string>
+    <string name="journey_collectible_distance">Через 850 шагов</string>
+    <string name="journey_collectible_description">Светится у старого моста</string>
 </resources>
