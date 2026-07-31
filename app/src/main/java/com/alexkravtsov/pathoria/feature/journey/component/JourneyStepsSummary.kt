@@ -69,7 +69,9 @@ fun JourneyStepsSummary(
                 label = streakLabel,
                 value = streakValue,
                 valueColor = JourneyArtworkColors.accent,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = PathoriaSpacing.small)
             )
         }
     }
