@@ -5,12 +5,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawing
-import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -27,7 +26,10 @@ import com.alexkravtsov.pathoria.feature.journey.component.JourneyStepsSummary
 import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
-fun JourneyScreen(modifier: Modifier = Modifier) {
+fun JourneyScreen(
+    modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues()
+) {
     val remainingSteps = 2720
     val scrimColor = JourneyArtworkColors.scrim
     val journeyProgress = 0.61f
@@ -65,7 +67,8 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .windowInsetsPadding(WindowInsets.safeDrawing)
+                .padding(contentPadding)
+                .consumeWindowInsets(contentPadding)
                 .padding(PathoriaSpacing.large),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
