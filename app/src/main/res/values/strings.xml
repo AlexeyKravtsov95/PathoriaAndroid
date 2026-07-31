@@ -13,4 +13,7 @@
     <string name="journey_collectible_moon_flower_title">Лунный цветок</string>
     <string name="journey_collectible_distance">Через 850 шагов</string>
     <string name="journey_collectible_description">Светится у старого моста</string>
+    <string name="navigation_journey">Путь</string>
+    <string name="navigation_journal">Дневник</string>
+    <string name="navigation_profile">Профиль</string>
 </resources>
