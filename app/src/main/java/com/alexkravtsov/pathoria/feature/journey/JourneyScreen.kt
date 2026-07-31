@@ -22,6 +22,7 @@ import com.alexkravtsov.pathoria.R
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
 import com.alexkravtsov.pathoria.feature.journey.component.JourneyLocationHeader
 import com.alexkravtsov.pathoria.feature.journey.component.JourneyProgressCard
+import com.alexkravtsov.pathoria.feature.journey.component.JourneyStepsSummary
 import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
@@ -71,13 +72,24 @@ fun JourneyScreen(modifier: Modifier = Modifier) {
                 title = stringResource(R.string.journey_forest_crossing_title),
                 subtitle = stringResource(R.string.journey_forest_crossing_subtitle)
             )
-            JourneyProgressCard(
-                label = stringResource(R.string.journey_next_point),
-                distance = stringResource(R.string.journey_current_distance),
-                remainingSteps = stringResource(R.string.journey_steps_left, remainingSteps),
+            Column(
                 modifier = Modifier.fillMaxWidth(),
-                progress = journeyProgress
-            )
+                verticalArrangement = Arrangement.spacedBy(PathoriaSpacing.small)
+            ) {
+                JourneyStepsSummary(
+                    todayLabel = stringResource(R.string.journey_today),
+                    todaySteps = stringResource(R.string.journey_current_today_steps),
+                    streakLabel = stringResource(R.string.journey_streak),
+                    streakValue = stringResource(R.string.journey_current_streak)
+                )
+                JourneyProgressCard(
+                    label = stringResource(R.string.journey_next_point),
+                    distance = stringResource(R.string.journey_current_distance),
+                    remainingSteps = stringResource(R.string.journey_steps_left, remainingSteps),
+                    modifier = Modifier.fillMaxWidth(),
+                    progress = journeyProgress
+                )
+            }
         }
     }
 }
