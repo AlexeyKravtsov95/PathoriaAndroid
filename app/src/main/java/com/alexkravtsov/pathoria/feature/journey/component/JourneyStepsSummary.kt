@@ -17,8 +17,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaSpacing
+import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaTheme
 import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
@@ -54,7 +56,9 @@ fun JourneyStepsSummary(
                 label = todayLabel,
                 value = todaySteps,
                 valueColor = JourneyArtworkColors.primaryText,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = PathoriaSpacing.small)
             )
             VerticalDivider(
                 modifier = Modifier.fillMaxHeight(),
@@ -79,7 +83,8 @@ private fun JourneyStatItem(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = label,
@@ -90,6 +95,41 @@ private fun JourneyStatItem(
             text = value,
             style = MaterialTheme.typography.bodyLarge,
             color = valueColor
+        )
+    }
+}
+
+@Preview(
+    showBackground = true,
+    widthDp = 360
+)
+@Composable
+private fun JourneyStepsSummaryPreview() {
+    PathoriaTheme {
+        JourneyStepsSummary(
+            todayLabel = "Сегодня",
+            todaySteps = "6 430 шагов",
+            streakLabel = "Серия",
+            streakValue = "4 дня",
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+}
+
+@Preview(
+    showBackground = true,
+    widthDp = 360,
+    fontScale = 2.0f
+)
+@Composable
+private fun JourneyStepsSummaryLargePreview() {
+    PathoriaTheme {
+        JourneyStepsSummary(
+            todayLabel = "Сегодня",
+            todaySteps = "6 430 шагов",
+            streakLabel = "Серия",
+            streakValue = "4 дня",
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
