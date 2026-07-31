@@ -4,12 +4,16 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -27,8 +31,7 @@ import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
 fun JourneyScreen(
-    modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues()
+    modifier: Modifier = Modifier, contentPadding: PaddingValues = PaddingValues()
 ) {
     val remainingSteps = 2720
     val scrimColor = JourneyArtworkColors.scrim
@@ -64,43 +67,53 @@ fun JourneyScreen(
                 )
         )
 
-        Column(
+        BoxWithConstraints(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(contentPadding)
                 .consumeWindowInsets(contentPadding)
                 .padding(PathoriaSpacing.large),
-            verticalArrangement = Arrangement.SpaceBetween
         ) {
-            JourneyLocationHeader(
-                title = stringResource(R.string.journey_forest_crossing_title),
-                subtitle = stringResource(R.string.journey_forest_crossing_subtitle)
-            )
+            val scrollState = rememberScrollState()
             Column(
-                modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(PathoriaSpacing.small)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .verticalScroll(scrollState)
+                    .heightIn(min = maxHeight),
+                verticalArrangement = Arrangement.SpaceBetween
             ) {
-                JourneyCollectiblePreview(
-                    label = stringResource(R.string.journey_collectible_label),
-                    title = stringResource(R.string.journey_collectible_moon_flower_title),
-                    distance = stringResource(R.string.journey_collectible_distance),
-                    description = stringResource(R.string.journey_collectible_description),
-                    modifier = Modifier.fillMaxWidth()
+                JourneyLocationHeader(
+                    title = stringResource(R.string.journey_forest_crossing_title),
+                    subtitle = stringResource(R.string.journey_forest_crossing_subtitle)
                 )
-                JourneyStepsSummary(
-                    todayLabel = stringResource(R.string.journey_today),
-                    todaySteps = stringResource(R.string.journey_current_today_steps),
-                    streakLabel = stringResource(R.string.journey_streak),
-                    streakValue = stringResource(R.string.journey_current_streak),
-                    modifier = Modifier.fillMaxWidth()
-                )
-                JourneyProgressCard(
-                    label = stringResource(R.string.journey_next_point),
-                    distance = stringResource(R.string.journey_current_distance),
-                    remainingSteps = stringResource(R.string.journey_steps_left, remainingSteps),
+                Column(
                     modifier = Modifier.fillMaxWidth(),
-                    progress = journeyProgress
-                )
+                    verticalArrangement = Arrangement.spacedBy(PathoriaSpacing.small)
+                ) {
+                    JourneyCollectiblePreview(
+                        label = stringResource(R.string.journey_collectible_label),
+                        title = stringResource(R.string.journey_collectible_moon_flower_title),
+                        distance = stringResource(R.string.journey_collectible_distance),
+                        description = stringResource(R.string.journey_collectible_description),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    JourneyStepsSummary(
+                        todayLabel = stringResource(R.string.journey_today),
+                        todaySteps = stringResource(R.string.journey_current_today_steps),
+                        streakLabel = stringResource(R.string.journey_streak),
+                        streakValue = stringResource(R.string.journey_current_streak),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    JourneyProgressCard(
+                        label = stringResource(R.string.journey_next_point),
+                        distance = stringResource(R.string.journey_current_distance),
+                        remainingSteps = stringResource(
+                            R.string.journey_steps_left, remainingSteps
+                        ),
+                        modifier = Modifier.fillMaxWidth(),
+                        progress = journeyProgress
+                    )
+                }
             }
         }
     }
