@@ -11,6 +11,7 @@ import com.alexkravtsov.pathoria.core.designsystem.theme.PathoriaTheme
 import com.alexkravtsov.pathoria.feature.journey.JourneyScreen
 import com.alexkravtsov.pathoria.ui.navigation.PathoriaBottomBar
 import com.alexkravtsov.pathoria.ui.navigation.PathoriaDestination
+import java.util.Locale
 
 @Composable
 fun PathoriaApp() {
@@ -27,56 +28,15 @@ fun PathoriaApp() {
 }
 
 @Preview(
-    showSystemUi = true,
-    widthDp = 360,
-    heightDp = 640,
-    fontScale = 2.0f
-)
-@Composable
-private fun PathoriaAppPreview() {
-    PathoriaTheme {
-        PathoriaApp()
-    }
-}
-
-@Preview(
-    name = "Large font",
-    widthDp = 360,
-    heightDp = 640,
-    fontScale = 3.0f,
-    showSystemUi = true
-)
-@Composable
-private fun PathoriaAppLargePreview() {
-    PathoriaTheme {
-        PathoriaApp()
-    }
-}
-
-@Preview(
-    name = "Landscape",
-    widthDp = 640,
-    heightDp = 360,
-    showSystemUi = true
-)
-@Composable
-private fun PathoriaAppLandscapePreview() {
-    PathoriaTheme {
-        PathoriaApp()
-    }
-}
-
-@Preview(
     name = "Long strings",
     widthDp = 360,
     heightDp = 640,
-    locale = "en-rGB",
     showSystemUi = true
 )
 @Composable
 private fun PathoriaAppAdaptivePreview() {
     val configuration = Configuration(LocalConfiguration.current).apply {
-        setLocale(java.util.Locale.UK)
+        setLocale(Locale.UK)
     }
     val context = LocalContext.current.createConfigurationContext(configuration)
     CompositionLocalProvider(
@@ -86,5 +46,44 @@ private fun PathoriaAppAdaptivePreview() {
         PathoriaTheme {
             PathoriaApp()
         }
+    }
+}
+
+@Preview(
+    name = "Compact",
+    widthDp = 360,
+    heightDp = 640,
+    showSystemUi = true
+)
+@Preview(
+    name = "Tall",
+    widthDp = 412,
+    heightDp = 915,
+    showSystemUi = true
+)
+@Preview(
+    name = "Large font",
+    widthDp = 360,
+    heightDp = 640,
+    fontScale = 2.0f,
+    showSystemUi = true
+)
+@Preview(
+    name = "Landscape",
+    widthDp = 640,
+    heightDp = 360,
+    showSystemUi = true
+)
+@Preview(
+    name = "Dark",
+    widthDp = 360,
+    heightDp = 640,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    showSystemUi = true
+)
+@Composable
+private fun PathoriaAppPreview() {
+    PathoriaTheme {
+        PathoriaApp()
     }
 }

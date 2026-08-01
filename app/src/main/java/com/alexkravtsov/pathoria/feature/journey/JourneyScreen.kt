@@ -31,7 +31,8 @@ import com.alexkravtsov.pathoria.feature.journey.theme.JourneyArtworkColors
 
 @Composable
 fun JourneyScreen(
-    modifier: Modifier = Modifier, contentPadding: PaddingValues = PaddingValues()
+    modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues()
 ) {
     val remainingSteps = 2720
     val scrimColor = JourneyArtworkColors.scrim
